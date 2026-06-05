@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savea Ophelia - Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ffd6e7,#ffeaf3,#fff5fa);
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+    width:280px;
+    background:rgba(255,255,255,0.4);
+    backdrop-filter:blur(15px);
+    border-right:1px solid rgba(255,255,255,0.5);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.profile{
+    text-align:center;
+}
+
+.avatar{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff82b2,#ffb6d4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:50px;
+    font-weight:bold;
+    margin:auto;
+    box-shadow:0 10px 30px rgba(255,105,180,0.3);
+}
+
+.profile h2{
+    margin-top:15px;
+    color:#d84f8d;
+}
+
+.profile p{
+    color:#777;
+    font-size:14px;
+}
+
+.menu{
+    margin-top:40px;
+    width:100%;
+}
+
+.menu button{
+    width:100%;
+    border:none;
+    background:white;
+    padding:15px;
+    margin:8px 0;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+    color:#d84f8d;
+    font-weight:500;
+}
+
+.menu button:hover,
+.menu button.active{
+    background:#ff82b2;
+    color:white;
+    transform:translateX(5px);
+}
+
+/* Content */
+.content{
+    flex:1;
+    position:relative;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding:70px;
+    opacity:0;
+    transform:translateX(100px);
+    transition:0.7s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.slide.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.slide h1{
+    color:#d84f8d;
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.slide h2{
+    color:#d84f8d;
+    margin-bottom:20px;
+}
+
+.slide p{
+    max-width:800px;
+    line-height:1.9;
+    color:#555;
+    font-size:18px;
+}
+
+.card{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(255,105,180,0.15);
+    max-width:900px;
+}
+
+.icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.decoration{
+    position:absolute;
+    border-radius:50%;
+    opacity:0.2;
+}
+
+.one{
+    width:300px;
+    height:300px;
+    background:#ff7db0;
+    top:-100px;
+    right:-80px;
+}
+
+.two{
+    width:200px;
+    height:200px;
+    background:#ffc1da;
+    bottom:-50px;
+    left:100px;
+}
+
+@media(max-width:900px){
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+    }
+
+    .content{
+        height:100%;
+    }
+
+    .slide{
+        padding:30px;
+    }
+
+    .slide h1{
+        font-size:34px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="avatar">S</div>
+            <h2>Savea Ophelia</h2>
+            <p>Personal Portfolio</p>
+        </div>
+
+        <div class="menu">
+            <button class="active" onclick="showSlide(0)">Beranda</button>
+            <button onclick="showSlide(1)">Fisika</button>
+            <button onclick="showSlide(2)">Kimia</button>
+            <button onclick="showSlide(3)">Game</button>
+            <button onclick="showSlide(4)">Matematika</button>
+        </div>
+    </aside>
+
+    <main class="content">
+
+        <div class="decoration one"></div>
+        <div class="decoration two"></div>
+
+        <!-- Home -->
+        <section class="slide active">
+            <div class="card">
+                <h1>Halo, Saya Savea Ophelia ✨</h1>
+                <p>
+                    Selamat datang di portofolio pribadi saya. Saya memiliki
+                    ketertarikan yang kuat terhadap berbagai bidang yang
+                    menggabungkan logika, kreativitas, dan eksplorasi intelektual.
+                    Bagi saya, setiap ilmu pengetahuan merupakan kesempatan untuk
+                    memahami dunia secara lebih mendalam, sementara setiap tantangan
+                    menjadi ruang untuk berkembang dan menemukan perspektif baru.
+                </p>
+            </div>
+        </section>
+
+        <!-- Fisika -->
+        <section class="slide">
+            <div class="card">
+                <div class="icon">🌌</div>
+                <h2>Fisika</h2>
+                <p>
+                    Fisika merupakan bidang yang sangat menarik karena menjelaskan
+                    bagaimana alam semesta bekerja melalui prinsip-prinsip yang
+                    terukur dan logis. Saya tertarik pada fenomena alam,
+                    mekanika, energi, serta berbagai konsep yang membantu
+                    menjelaskan hubungan antara teori dan realitas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Kimia -->
+        <section class="slide">
+            <div class="card">
+                <div class="icon">🧪</div>
+                <h2>Kimia</h2>
+                <p>
+                    Kimia membuka pemahaman mengenai struktur materi dan proses
+                    perubahan yang terjadi di sekeliling kita. Ketertarikan saya
+                    terletak pada bagaimana unsur dan senyawa dapat berinteraksi,
+                    menghasilkan berbagai fenomena yang berperan penting dalam
+                    kehidupan sehari-hari maupun perkembangan teknologi modern.
+                </p>
+            </div>
+        </section>
+
+        <!-- Game -->
+        <section class="slide">
+            <div class="card">
+                <div class="icon">🎮</div>
+                <h2>Game</h2>
+                <p>
+                    Dunia game memberikan kombinasi unik antara hiburan,
+                    kreativitas, strategi, dan pemecahan masalah. Saya menikmati
+                    pengalaman menjelajahi berbagai konsep desain permainan,
+                    narasi interaktif, serta tantangan yang mendorong kemampuan
+                    berpikir kritis dan adaptasi.
+                </p>
+            </div>
+        </section>
+
+        <!-- Matematika -->
+        <section class="slide">
+            <div class="card">
+                <div class="icon">📚</div>
+                <h2>Matematika</h2>
+                <p>
+                    Matematika adalah fondasi dari banyak disiplin ilmu yang saya
+                    sukai. Keindahan matematika terletak pada keteraturannya,
+                    kemampuan analitis yang ditawarkannya, serta bagaimana konsep
+                    sederhana dapat berkembang menjadi solusi bagi permasalahan
+                    yang kompleks.
+                </p>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const buttons = document.querySelectorAll('.menu button');
+
+function showSlide(index){
+
+    slides.forEach(slide=>{
+        slide.classList.remove('active');
+    });
+
+    buttons.forEach(btn=>{
+        btn.classList.remove('active');
+    });
+
+    slides[index].classList.add('active');
+    buttons[index].classList.add('active');
+}
+</script>
+
+</body>
+</html>
