@@ -3,11 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Savea Ophelia - Portfolio</title>
+<title>Savea Ophelia | Academic Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --pink:#ff7eb3;
+    --pink2:#ffb6d9;
+    --pink3:#ffe5f1;
+    --white:#ffffff;
+    --text:#5d5d5d;
+}
+
 *{
     margin:0;
     padding:0;
@@ -16,8 +24,7 @@
 }
 
 body{
-    background:linear-gradient(135deg,#ffd6e7,#ffeaf3,#fff5fa);
-    height:100vh;
+    background:linear-gradient(135deg,#ffd7e9,#fff0f7);
     overflow:hidden;
 }
 
@@ -26,74 +33,72 @@ body{
     height:100vh;
 }
 
-/* Sidebar */
+/* SIDEBAR */
+
 .sidebar{
-    width:280px;
-    background:rgba(255,255,255,0.4);
-    backdrop-filter:blur(15px);
+    width:290px;
+    background:rgba(255,255,255,0.45);
+    backdrop-filter:blur(18px);
     border-right:1px solid rgba(255,255,255,0.5);
+    padding:30px;
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:40px 20px;
-}
-
-.profile{
-    text-align:center;
 }
 
 .avatar{
-    width:130px;
-    height:130px;
+    width:140px;
+    height:140px;
     border-radius:50%;
-    background:linear-gradient(135deg,#ff82b2,#ffb6d4);
+    background:linear-gradient(135deg,var(--pink),#ff5e98);
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     color:white;
-    font-size:50px;
+    font-size:55px;
     font-weight:bold;
-    margin:auto;
-    box-shadow:0 10px 30px rgba(255,105,180,0.3);
+    box-shadow:0 15px 35px rgba(255,105,180,.3);
 }
 
-.profile h2{
+.sidebar h2{
     margin-top:15px;
-    color:#d84f8d;
+    color:#e14589;
+    text-align:center;
 }
 
-.profile p{
+.sidebar p{
     color:#777;
     font-size:14px;
+    text-align:center;
 }
 
 .menu{
-    margin-top:40px;
     width:100%;
+    margin-top:30px;
 }
 
 .menu button{
     width:100%;
     border:none;
-    background:white;
-    padding:15px;
-    margin:8px 0;
+    margin:7px 0;
+    padding:14px;
     border-radius:15px;
+    background:white;
+    color:#d44a84;
+    font-weight:500;
     cursor:pointer;
     transition:.3s;
-    font-size:15px;
-    color:#d84f8d;
-    font-weight:500;
 }
 
 .menu button:hover,
 .menu button.active{
-    background:#ff82b2;
+    background:var(--pink);
     color:white;
     transform:translateX(5px);
 }
 
-/* Content */
+/* CONTENT */
+
 .content{
     flex:1;
     position:relative;
@@ -104,13 +109,11 @@ body{
     position:absolute;
     width:100%;
     height:100%;
-    padding:70px;
+    overflow-y:auto;
+    padding:60px;
     opacity:0;
-    transform:translateX(100px);
-    transition:0.7s ease;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    transform:translateX(80px);
+    transition:.7s ease;
 }
 
 .slide.active{
@@ -118,81 +121,105 @@ body{
     transform:translateX(0);
 }
 
-.slide h1{
-    color:#d84f8d;
-    font-size:48px;
-    margin-bottom:20px;
-}
-
-.slide h2{
-    color:#d84f8d;
-    margin-bottom:20px;
-}
-
-.slide p{
-    max-width:800px;
-    line-height:1.9;
-    color:#555;
-    font-size:18px;
-}
-
 .card{
-    background:rgba(255,255,255,0.6);
-    backdrop-filter:blur(10px);
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(255,105,180,0.15);
-    max-width:900px;
+    background:rgba(255,255,255,.6);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(255,105,180,.15);
+    max-width:1000px;
 }
 
-.icon{
-    font-size:55px;
+h1{
+    color:#e14589;
+    margin-bottom:15px;
+    font-size:42px;
+}
+
+h2{
+    color:#e14589;
     margin-bottom:15px;
 }
 
-.decoration{
+h3{
+    color:#d84f8d;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+p{
+    color:var(--text);
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+ul{
+    margin-left:25px;
+    color:var(--text);
+    line-height:1.9;
+}
+
+.quote{
+    background:white;
+    border-left:5px solid var(--pink);
+    padding:18px;
+    margin-top:20px;
+    border-radius:15px;
+    font-style:italic;
+    color:#666;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 15px;
+    background:#ffd6e7;
+    color:#d84f8d;
+    border-radius:20px;
+    margin:5px;
+    font-size:14px;
+}
+
+.decoration1,
+.decoration2{
     position:absolute;
     border-radius:50%;
-    opacity:0.2;
+    opacity:.15;
 }
 
-.one{
+.decoration1{
     width:300px;
     height:300px;
-    background:#ff7db0;
+    background:#ff5e98;
     top:-100px;
-    right:-80px;
+    right:-100px;
 }
 
-.two{
-    width:200px;
-    height:200px;
-    background:#ffc1da;
-    bottom:-50px;
-    left:100px;
+.decoration2{
+    width:250px;
+    height:250px;
+    background:#ffb6d9;
+    bottom:-80px;
+    left:-60px;
 }
 
 @media(max-width:900px){
-    .container{
-        flex-direction:column;
-    }
 
-    .sidebar{
-        width:100%;
-        height:auto;
-    }
+.container{
+    flex-direction:column;
+}
 
-    .content{
-        height:100%;
-    }
+.sidebar{
+    width:100%;
+    height:auto;
+}
 
-    .slide{
-        padding:30px;
-    }
+.slide{
+    padding:25px;
+}
 
-    .slide h1{
-        font-size:34px;
-    }
+h1{
+    font-size:32px;
+}
 }
 </style>
 </head>
@@ -200,122 +227,353 @@ body{
 
 <div class="container">
 
-    <aside class="sidebar">
-        <div class="profile">
-            <div class="avatar">S</div>
-            <h2>Savea Ophelia</h2>
-            <p>Personal Portfolio</p>
-        </div>
+<!-- SIDEBAR -->
 
-        <div class="menu">
-            <button class="active" onclick="showSlide(0)">Beranda</button>
-            <button onclick="showSlide(1)">Fisika</button>
-            <button onclick="showSlide(2)">Kimia</button>
-            <button onclick="showSlide(3)">Game</button>
-            <button onclick="showSlide(4)">Matematika</button>
-        </div>
-    </aside>
+<div class="sidebar">
 
-    <main class="content">
+<div class="avatar">S</div>
 
-        <div class="decoration one"></div>
-        <div class="decoration two"></div>
+<h2>Savea Ophelia</h2>
+<p>Academic & Personal Portfolio</p>
 
-        <!-- Home -->
-        <section class="slide active">
-            <div class="card">
-                <h1>Halo, Saya Savea Ophelia ✨</h1>
-                <p>
-                    Selamat datang di portofolio pribadi saya. Saya memiliki
-                    ketertarikan yang kuat terhadap berbagai bidang yang
-                    menggabungkan logika, kreativitas, dan eksplorasi intelektual.
-                    Bagi saya, setiap ilmu pengetahuan merupakan kesempatan untuk
-                    memahami dunia secara lebih mendalam, sementara setiap tantangan
-                    menjadi ruang untuk berkembang dan menemukan perspektif baru.
-                </p>
-            </div>
-        </section>
+<div class="menu">
+<button class="active" onclick="showSlide(0)">🏠 Beranda</button>
+<button onclick="showSlide(1)">👩 Tentang Saya</button>
+<button onclick="showSlide(2)">🌌 Fisika</button>
+<button onclick="showSlide(3)">🧪 Kimia</button>
+<button onclick="showSlide(4)">🎮 Game</button>
+<button onclick="showSlide(5)">📚 Matematika</button>
+<button onclick="showSlide(6)">🌟 Pengalaman</button>
+<button onclick="showSlide(7)">🚀 Tujuan</button>
+</div>
 
-        <!-- Fisika -->
-        <section class="slide">
-            <div class="card">
-                <div class="icon">🌌</div>
-                <h2>Fisika</h2>
-                <p>
-                    Fisika merupakan bidang yang sangat menarik karena menjelaskan
-                    bagaimana alam semesta bekerja melalui prinsip-prinsip yang
-                    terukur dan logis. Saya tertarik pada fenomena alam,
-                    mekanika, energi, serta berbagai konsep yang membantu
-                    menjelaskan hubungan antara teori dan realitas.
-                </p>
-            </div>
-        </section>
+</div>
 
-        <!-- Kimia -->
-        <section class="slide">
-            <div class="card">
-                <div class="icon">🧪</div>
-                <h2>Kimia</h2>
-                <p>
-                    Kimia membuka pemahaman mengenai struktur materi dan proses
-                    perubahan yang terjadi di sekeliling kita. Ketertarikan saya
-                    terletak pada bagaimana unsur dan senyawa dapat berinteraksi,
-                    menghasilkan berbagai fenomena yang berperan penting dalam
-                    kehidupan sehari-hari maupun perkembangan teknologi modern.
-                </p>
-            </div>
-        </section>
+<!-- CONTENT -->
 
-        <!-- Game -->
-        <section class="slide">
-            <div class="card">
-                <div class="icon">🎮</div>
-                <h2>Game</h2>
-                <p>
-                    Dunia game memberikan kombinasi unik antara hiburan,
-                    kreativitas, strategi, dan pemecahan masalah. Saya menikmati
-                    pengalaman menjelajahi berbagai konsep desain permainan,
-                    narasi interaktif, serta tantangan yang mendorong kemampuan
-                    berpikir kritis dan adaptasi.
-                </p>
-            </div>
-        </section>
+<div class="content">
 
-        <!-- Matematika -->
-        <section class="slide">
-            <div class="card">
-                <div class="icon">📚</div>
-                <h2>Matematika</h2>
-                <p>
-                    Matematika adalah fondasi dari banyak disiplin ilmu yang saya
-                    sukai. Keindahan matematika terletak pada keteraturannya,
-                    kemampuan analitis yang ditawarkannya, serta bagaimana konsep
-                    sederhana dapat berkembang menjadi solusi bagi permasalahan
-                    yang kompleks.
-                </p>
-            </div>
-        </section>
+<div class="decoration1"></div>
+<div class="decoration2"></div>
 
-    </main>
+<!-- BERANDA -->
+
+<section class="slide active">
+<div class="card">
+
+<h1>Halo, Saya Savea Ophelia ✨</h1>
+
+<p>
+"Mempelajari dunia bukan hanya tentang mengetahui jawaban,
+tetapi juga memahami alasan di balik setiap fenomena."
+</p>
+
+<p>
+Selamat datang di portofolio pribadi saya. Saya adalah seorang
+pelajar yang memiliki minat besar terhadap bidang sains,
+logika, dan teknologi. Saya menikmati proses belajar sebagai
+sarana untuk memperluas wawasan serta mengembangkan kemampuan
+berpikir kritis.
+</p>
+
+<p>
+Bagi saya, ilmu pengetahuan merupakan alat untuk memahami dunia
+secara lebih mendalam. Oleh karena itu, saya senantiasa
+berusaha mempelajari berbagai konsep baru, terutama dalam
+bidang fisika, kimia, matematika, dan teknologi digital.
+</p>
+
+<div class="tag">Fisika</div>
+<div class="tag">Kimia</div>
+<div class="tag">Matematika</div>
+<div class="tag">Game</div>
+
+</div>
+</section>
+
+<!-- TENTANG -->
+
+<section class="slide">
+<div class="card">
+
+<h1>Tentang Saya 👩‍🎓</h1>
+
+<p>
+Nama saya Savea Ophelia. Saya memiliki rasa ingin tahu yang
+tinggi, senang mempelajari berbagai konsep ilmiah, serta
+tertarik pada proses pemecahan masalah melalui pendekatan yang
+logis dan sistematis.
+</p>
+
+<p>
+Saya percaya bahwa pembelajaran terbaik tidak hanya diperoleh
+dari teori, tetapi juga dari pengalaman, eksplorasi, dan
+keberanian untuk mencoba hal-hal baru.
+</p>
+
+<h3>Nilai yang Saya Pegang</h3>
+
+<ul>
+<li>Disiplin dalam belajar</li>
+<li>Konsisten dalam berkembang</li>
+<li>Berpikir logis dan objektif</li>
+<li>Terbuka terhadap ilmu baru</li>
+<li>Menghargai proses belajar</li>
+</ul>
+
+</div>
+</section>
+
+<!-- FISIKA -->
+
+<section class="slide">
+<div class="card">
+
+<h1>🌌 Fisika</h1>
+
+<p>
+Fisika merupakan bidang yang paling menarik bagi saya karena
+menjelaskan bagaimana alam semesta bekerja melalui hukum-hukum
+yang sistematis dan terukur.
+</p>
+
+<h3>Topik Favorit</h3>
+
+<ul>
+<li>Mekanika dan Gerak</li>
+<li>Energi dan Usaha</li>
+<li>Gelombang dan Bunyi</li>
+<li>Astronomi Dasar</li>
+<li>Hukum Newton</li>
+</ul>
+
+<h3>Pengalaman</h3>
+
+<ul>
+<li>Mengikuti praktikum gaya dan gerak.</li>
+<li>Membuat rangkuman konsep fisika.</li>
+<li>Mempelajari hubungan massa, gaya, dan percepatan.</li>
+<li>Menganalisis fenomena fisika dalam kehidupan sehari-hari.</li>
+</ul>
+
+<div class="quote">
+"Fisika bukan sekadar rumus. Fisika adalah bahasa yang digunakan
+alam semesta untuk menjelaskan dirinya sendiri."
+</div>
+
+</div>
+</section>
+
+<!-- KIMIA -->
+
+<section class="slide">
+<div class="card">
+
+<h1>🧪 Kimia</h1>
+
+<p>
+Kimia membantu saya memahami bagaimana materi tersusun dan
+bagaimana reaksi yang berbeda dapat menghasilkan perubahan
+yang luar biasa.
+</p>
+
+<h3>Topik Favorit</h3>
+
+<ul>
+<li>Struktur Atom</li>
+<li>Ikatan Kimia</li>
+<li>Larutan dan Konsentrasi</li>
+<li>Asam Basa</li>
+<li>Reaksi Kimia</li>
+</ul>
+
+<h3>Pengalaman</h3>
+
+<ul>
+<li>Praktikum indikator asam dan basa.</li>
+<li>Mengidentifikasi campuran dan senyawa.</li>
+<li>Mempelajari reaksi sederhana sehari-hari.</li>
+<li>Membuat laporan praktikum kimia.</li>
+</ul>
+
+<div class="quote">
+"Setiap perubahan kecil dalam kimia mengajarkan bahwa hal
+sederhana dapat menghasilkan dampak yang besar."
+</div>
+
+</div>
+</section>
+
+<!-- GAME -->
+
+<section class="slide">
+<div class="card">
+
+<h1>🎮 Game</h1>
+
+<p>
+Selain bidang akademik, saya juga menikmati dunia game sebagai
+media hiburan sekaligus sarana melatih kemampuan berpikir
+strategis dan kreatif.
+</p>
+
+<h3>Manfaat yang Saya Peroleh</h3>
+
+<ul>
+<li>Strategi dan perencanaan</li>
+<li>Pemecahan masalah</li>
+<li>Kerja sama tim</li>
+<li>Pengambilan keputusan</li>
+<li>Adaptasi terhadap tantangan</li>
+</ul>
+
+<h3>Pengalaman</h3>
+
+<ul>
+<li>Bermain game strategi berbasis manajemen sumber daya.</li>
+<li>Mengikuti permainan kerja sama tim.</li>
+<li>Melatih fokus dan ketelitian melalui berbagai tantangan.</li>
+</ul>
+
+<div class="quote">
+"Setiap level yang berhasil diselesaikan mengajarkan bahwa
+kesabaran dan strategi adalah kunci keberhasilan."
+</div>
+
+</div>
+</section>
+
+<!-- MATEMATIKA -->
+
+<section class="slide">
+<div class="card">
+
+<h1>📚 Matematika</h1>
+
+<p>
+Matematika merupakan fondasi dari berbagai disiplin ilmu yang
+saya pelajari. Bidang ini melatih kemampuan berpikir sistematis
+dan analitis dalam menyelesaikan permasalahan.
+</p>
+
+<h3>Topik Favorit</h3>
+
+<ul>
+<li>Aljabar</li>
+<li>Geometri</li>
+<li>Statistika</li>
+<li>Persamaan Linear</li>
+<li>Logika Matematika</li>
+</ul>
+
+<h3>Pengalaman</h3>
+
+<ul>
+<li>Membantu teman memahami materi aljabar.</li>
+<li>Membuat kumpulan rumus belajar.</li>
+<li>Berlatih soal secara rutin.</li>
+<li>Mengembangkan kemampuan analisis numerik.</li>
+</ul>
+
+<div class="quote">
+"Matematika mengajarkan bahwa setiap masalah memiliki jalan
+menuju solusi."
+</div>
+
+</div>
+</section>
+
+<!-- PENGALAMAN -->
+
+<section class="slide">
+<div class="card">
+
+<h1>🌟 Pengalaman Akademik</h1>
+
+<h3>Praktikum Sains</h3>
+<p>
+Berpartisipasi dalam berbagai kegiatan praktikum fisika dan
+kimia yang membantu memahami penerapan teori secara langsung.
+</p>
+
+<h3>Proyek Pembelajaran Mandiri</h3>
+<p>
+Mempelajari materi tambahan melalui buku, artikel ilmiah,
+video edukasi, dan platform pembelajaran digital.
+</p>
+
+<h3>Diskusi Kelompok</h3>
+<p>
+Aktif dalam kegiatan diskusi untuk meningkatkan kemampuan
+komunikasi, kolaborasi, dan pemecahan masalah.
+</p>
+
+<h3>Pengembangan Keterampilan Digital</h3>
+<p>
+Memanfaatkan teknologi untuk membuat catatan digital,
+presentasi, dan media pembelajaran yang lebih interaktif.
+</p>
+
+</div>
+</section>
+
+<!-- TUJUAN -->
+
+<section class="slide">
+<div class="card">
+
+<h1>🚀 Tujuan Masa Depan</h1>
+
+<p>
+Saya ingin terus mengembangkan kemampuan akademik terutama
+dalam bidang sains dan matematika. Saya berharap dapat
+memanfaatkan ilmu pengetahuan untuk memberikan kontribusi yang
+bermanfaat bagi masyarakat.
+</p>
+
+<p>
+Dengan semangat belajar yang konsisten, saya percaya bahwa
+setiap langkah kecil yang dilakukan hari ini akan menjadi
+fondasi bagi pencapaian yang lebih besar di masa depan.
+</p>
+
+<div class="quote">
+"Belajar bukan tentang menjadi lebih baik dari orang lain,
+melainkan menjadi versi terbaik dari diri sendiri setiap hari."
+</div>
+
+<div class="quote">
+"Fisika mengajarkan cara alam bekerja, kimia menjelaskan
+perubahan, matematika menunjukkan pola, dan pengalaman
+mengajarkan makna dari semuanya."
+</div>
+
+</div>
+</section>
+
+</div>
+
 </div>
 
 <script>
+
 const slides = document.querySelectorAll('.slide');
 const buttons = document.querySelectorAll('.menu button');
 
 function showSlide(index){
 
-    slides.forEach(slide=>{
-        slide.classList.remove('active');
-    });
+slides.forEach(slide=>{
+slide.classList.remove('active');
+});
 
-    buttons.forEach(btn=>{
-        btn.classList.remove('active');
-    });
+buttons.forEach(btn=>{
+btn.classList.remove('active');
+});
 
-    slides[index].classList.add('active');
-    buttons[index].classList.add('active');
+slides[index].classList.add('active');
+buttons[index].classList.add('active');
 }
+
 </script>
 
 </body>
